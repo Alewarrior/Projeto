@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\projetos\senac\workspaceSenac\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1328114031.index
+279464321.index
+4247420537.index
+2529990053.index
+533518446.index
+3618798239.index
