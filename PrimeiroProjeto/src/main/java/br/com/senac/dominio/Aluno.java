@@ -26,12 +26,12 @@ public class Aluno implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setName(String name) {
-		this.nome = name;
+	public void setName(String nome) {
+		this.nome = nome;
 	}
 	
 	
