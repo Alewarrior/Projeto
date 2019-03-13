@@ -19,7 +19,7 @@ import java.util.ArrayList;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer Id;
+	private Integer Id_Estado;
 	
 	private String nome;
 	
@@ -28,11 +28,11 @@ import java.util.ArrayList;
 	private List<Cidade> cidades = new ArrayList();
 
 	public Integer getId() {
-		return Id;
+		return Id_Estado;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		Id_Estado = id;
 	}
 
 	public String getNome() {

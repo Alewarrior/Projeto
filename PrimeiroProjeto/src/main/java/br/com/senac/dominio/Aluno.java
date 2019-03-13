@@ -24,6 +24,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		private static final long 	serialVersionUID = 1L;
 	
 	
+	public static long getSerialversionuid() {
+			return serialVersionUID;
+		}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;

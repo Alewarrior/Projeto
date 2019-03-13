@@ -30,6 +30,81 @@ public class Endereco implements Serializable {
 	private Aluno aluno;
 	
 	
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public String getRua() {
+		return rua;
+	}
+
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+
+	public String getBairro() {
+		return bairro;
+	}
+
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+
+	public String getCep() {
+		return cep;
+	}
+
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
+
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 	@ManyToOne
 	@JoinColumn(name="cidade_id")
 	private Cidade cidade;
