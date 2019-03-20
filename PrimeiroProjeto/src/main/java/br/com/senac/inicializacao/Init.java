@@ -53,7 +53,7 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
 		aluno1.setNome("Lucas");
 		aluno1.setEmail("lucas@gmail.com");
 		
-		alunoRepositorio.save(aluno1);
+		//alunoRepositorio.save(aluno1);
 		
 		Aluno alunoGravado = alunoRepositorio.findByEmail("lucas@gmail.com");
 		
@@ -84,10 +84,12 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
 		usuario.setSobrenome("lastName");
 		usuario.setEmail("user@example.com");
 		usuario.setSenha("123456");
+
 		
-		alunoRepositorio.save(aluno1);
-		usuarioRepositorio.save(usuario);
 		
+//		alunoRepositorio.save(aluno1);
+//		
+//		
 		Endereco end1 = new Endereco();
 		end1.setRua("Rua dos Andradas");
 		end1.setNumero("20");
@@ -96,28 +98,36 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
 		end1.setCep("22341-175");
 		end1.setCidade(cidade1);
 		end1.setAluno(aluno1);
-		end1.setUsuario(usuario);
+		//end1.setUsuario(usuario);
+	
+
+		usuarioRepositorio.save(usuario);
 		
 		
 		Endereco end2 = new Endereco();
-		end1.setRua("Rua dos Marrecos");
-		end1.setNumero("68");
-		end1.setBairro("Laje");
-		end1.setComplemento("Fundos");
-		end1.setCep("21572-201");
-		end1.setCidade(cidade2);
-		end1.setAluno(aluno1);
-		end1.setUsuario(usuario);
+		end2.setRua("Rua dos Marrecos");
+		end2.setNumero("68");
+		end2.setBairro("Laje");
+		end2.setComplemento("Fundos");
+		end2.setCep("21572-201");
+		end2.setCidade(cidade2);
+		end2.setAluno(aluno1);
+		end2.setUsuario(usuario);
+
+	
+
+		
+		alunoRepositorio.save(aluno1);		
 		
 		aluno1.getTelefones().addAll(Arrays.asList("21212121","23232323"));
-		
-		
-		alunoRepositorio.save(aluno1);
-		
-		enderecoRepositorio.saveAll(Arrays.asList(end1,end2));
-		
-		//Criando Categoria
-		
+//		
+//		
+//		
+//		
+		enderecoRepositorio.saveAll(Arrays.asList(end1));
+//		
+//		//Criando Categoria
+//		
 		Categoria categoria1 = new Categoria(null, "Java");
 		Categoria categoria2 = new Categoria(null, "mobile");
 		
