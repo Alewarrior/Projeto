@@ -16,84 +16,49 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
+public class Aluno implements Serializable {
 
-
-	@Entity
-	public class Aluno implements Serializable {
-		
-		private static final long 	serialVersionUID = 1L;
-	
-	
-	public static long getSerialversionuid() {
-			return serialVersionUID;
-		}
-
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	
 	private String nome;
-	
-	
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	private String email;
 	
 	@JsonIgnore
 	private String senha;
 	
-	@OneToMany (mappedBy = "aluno")
+	@OneToMany(mappedBy="aluno")
 	private List<Endereco> enderecos = new ArrayList<>();
 	
 	@ElementCollection
 	@CollectionTable(name="TELEFONE")
 	private Set<String> telefones = new HashSet<>();
-	
-	
+
 	public String getSenha() {
 		return senha;
 	}
-
-
 
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-
-
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
-
-
 
 	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
 	}
 
-
-
 	public Set<String> getTelefones() {
 		return telefones;
 	}
 
-
-
 	public void setTelefones(Set<String> telefones) {
 		this.telefones = telefones;
 	}
-
-
-
-	public List<Endereco> getEndereco(){
-		return enderecos;
-	}
-	
-	
 
 	public String getEmail() {
 		return email;
@@ -115,10 +80,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		return nome;
 	}
 
-	public void setName(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
-
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }

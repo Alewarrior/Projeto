@@ -1,9 +1,10 @@
+
 package br.com.senac.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CategoriaRepositorio extends JpaRepository<CategoriaRepositorio, Integer>{
+import br.com.senac.dominio.Categoria;
+
+public interface CategoriaRepositorio extends JpaRepository<Categoria, Integer> {
 
 }

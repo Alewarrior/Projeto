@@ -1,6 +1,9 @@
 package br.com.senac.dominio;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,30 +12,27 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+@Entity
+public class Estado implements Serializable {
 
-	@Entity
-	public class Estado implements Serializable {
-	
-	private static final long serialVersionUID = 1l;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer Id_Estado;
+	private Integer id;
 	
 	private String nome;
 	
-	@JsonIgnore // o estado não precisa conhecer as cidades para o json. Isso vai acontecer na classe cidade.
-	@OneToMany (mappedBy="estado")
-	private List<Cidade> cidades = new ArrayList();
+	@JsonIgnore
+	@OneToMany(mappedBy="estado")
+	private List<Cidade> cidades = new ArrayList<>();
 
 	public Integer getId() {
-		return Id_Estado;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id_Estado = id;
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -50,11 +50,10 @@ import java.util.ArrayList;
 	public void setCidades(List<Cidade> cidades) {
 		this.cidades = cidades;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }
-	
-	
-	
-	
-
-
